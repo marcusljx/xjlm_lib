@@ -25,16 +25,22 @@ bitset<16> restructure(bitset<16> input, int* form) {
 // TEST OUTPUTS =================================================
 void testCrypt16(int input_int) {
 	bitset<16> input_bin(input_int);		// binary form
+	
+	// RESTRUCTURE
 	bitset<16> output_bin_f1 = restructure(input_bin, form1_iterators);
 	bitset<16> output_bin_f2 = restructure(input_bin, form2_iterators);
 	bitset<16> output_bin_f3 = restructure(input_bin, form3_iterators);
 	bitset<16> output_bin_f4 = restructure(input_bin, form4_iterators);
 	
+	
+	// CONVERSION TO INT
 	int output_int_f1 = (int)(output_bin_f1.to_ulong());
 	int output_int_f2 = (int)(output_bin_f2.to_ulong());
 	int output_int_f3 = (int)(output_bin_f3.to_ulong());
 	int output_int_f4 = (int)(output_bin_f4.to_ulong());
 	
+	
+	// PRINTOUT
 	cout << "input NUMBER:\t" << input_int << endl;
 	cout << "input BINARY:\t" << input_bin << endl;
 	cout << "form1:\t" << output_bin_f1 << "\t(" << output_int_f1 << ")" << endl;
