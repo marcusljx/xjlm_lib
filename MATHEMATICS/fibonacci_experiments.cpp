@@ -48,10 +48,18 @@ vector<unsigned int> fibonacci(unsigned int n) {
 
 //==========================================================================
 int main(int argc, char const *argv[]) {
-	int n = 30;
+/*
+	int n = 50;
 	vector<unsigned int> test = fibonacci(n);
 	cout << "fib(" << n << "):" << endl;
 	print_bin_vect_uint(test);
 	cout << endl;
+*/
+
+	cout << 0b011 << endl;
+	cout << 0b011000 << endl;
+	cout << 0b010110100000 << endl;
+	cout << 0b110001011011101010000000 << endl;
+
 	return 0;
 }

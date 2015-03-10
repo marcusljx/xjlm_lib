@@ -33,3 +33,8 @@ sudo mv git-credential-gnome-keyring /usr/bin
 git config --global credential.helper gnome-keyring
 
 # Changing Terminal environment
+	# enabling history-based auto-complete
+	# in bashrc file (either [~/.bashrc] or [/etc/bash.bashrc]),
+	# append the following lines:
+		# 		bind '"\e[A": history-search-backward'
+		#			bind '"\e[B": history-search-forward'
