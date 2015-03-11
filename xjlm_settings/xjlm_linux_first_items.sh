@@ -11,7 +11,7 @@ sudo apt-get update
 
 
 # Package Installations
-sudo apt-get install git g++ sublime-text-installer xorg-dev build-essential libmagick++-dev libgnome-keyring-dev
+sudo apt-get install git g++ sublime-text-installer xorg-dev build-essential chromium-browser
 
 
 # Gnome Keyring set-up on non-GNOME environments
