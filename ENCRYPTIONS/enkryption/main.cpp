@@ -6,15 +6,14 @@
 
 using namespace std;
 
-
-
 int main(int argc, char const *argv[]) {
 	enkryption* enk = new enkryption();
 	
 	string original_string(argv[1]);
 	string processed = enk->process(original_string);
 
-	cout << "================ PROCESSED STRING ================\n" << processed << endl;
+	// cout << "================ PROCESSED STRING ================\n" << processed << endl;
+	cout << processed << endl;
 
 	delete enk;
 	return 0;
