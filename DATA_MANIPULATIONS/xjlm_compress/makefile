@@ -3,7 +3,7 @@ all:runTest
 CC= g++
 OBJECTS= 
 COMPILE_ARGS= -std=c++11
-TEST_ARGS= 
+TEST_ARGS= hello
 
 runTest: test
 	clear
