@@ -9,7 +9,7 @@
 using namespace std;
 
 enkryption::enkryption() {
-	p_cipher = {		"DP",				// A
+	p_cipher = {		"DPDL",			// A
 									"QL",				// B
 									"TL",				// C
 									"EL",				// D
@@ -36,6 +36,17 @@ enkryption::enkryption() {
 									"DHKDL",		// Y
 									"WPE",			// Z
 									"ZMS",			// keun
+									"WPFH",			// 0
+									"DNJ",			// 1
+									"XN",				// 2
+									"TTMFL",		// 3
+									"VH",				// 4
+									"VKDL",			// 5
+									"TLRTM",		// 6
+									"TPQMS",		// 7
+									"DPDLT",		// 8
+									"SKDL",			// 9
+
 										};
 }
 enkryption::~enkryption() {}
@@ -50,6 +61,8 @@ ciph_char(char input) {
 	} 
 	if( (input >= 'a')&&(input <= 'z') ) {
 		output += p_cipher[input-'a'];
+	} else if( (input >= '0')&&(input <= '9') ) {
+		output += p_cipher[input+]
 	} else {
 		output += input;
 	}
@@ -73,9 +86,10 @@ process(string input) {
 
 	for(int i=0; i<input.length(); i++) {
 		pox = ciph_char(input[i]);
-		for(int j=0; j<pox.length(); j++) {
-			output += ascii_char(pox[j]);
-		}
+		// for(int j=0; j<pox.length(); j++) {
+		// 	output += ascii_char(pox[j]);
+		// }
+		output += pox;
 	}
 
 

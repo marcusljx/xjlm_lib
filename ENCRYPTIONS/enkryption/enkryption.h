@@ -13,7 +13,7 @@ private:
 	vector<string> p_cipher;
 	string ciph_char(char input);
 	string ascii_char(char input);
-
+	
 public:
 	enkryption();
 	~enkryption();
