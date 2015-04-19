@@ -3,7 +3,7 @@ all:runTest
 CC= g++
 OBJECTS= enkryption.o
 COMPILE_ARGS= -std=c++11
-TEST_ARGS= < test.txt
+TEST_ARGS= < test.txt >output.txt
 
 runTest: test
 	clear

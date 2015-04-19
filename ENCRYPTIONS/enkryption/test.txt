@@ -1,4 +1,12 @@
-Hello world. Long time no see.
+Congratulations! You have successfully cracked the XJLM Phonetic Cipher.
 
-What the heck.
-12346
+The algorithm for solving this cipher is with these steps:
+	1. The first step is to use a mirror-cipher of the English Alphabet. The letter "A" translates to "Z", "B" to "Y", and so on.
+
+	2. The second step is to type the letters out on a regular computer, but with the digital representation of the letters in the Korean standard 2-bulsik keyboard format. This is easiest done without looking at the screen while typing out the letters. The combination of keys will form sentences in the Korean alphabet, Hangul.
+
+	3. The third step is to read out the result of step 2 in Korean, and interpret it phonetically in English. For example, the letter "A" is pronounced "Ey-ee" in Korean. Symbols are also represented by their English names written phonetically in the Korean alphabet. Discrete interpretation of special symbols like [!#*({)_]}/.<,>"; and TAB and NEWLINE characters will probably be needed.
+
+	4. All things considered, the cipher can thus be understood easily by anyone who is fluent in both Korean and English, both spoken and written, with the aid of step 1, and some knowledge of encoding. Effectively, steps 2-3 are simply encoding processes, with step_1 as the only proper encryption step.
+
+Of course, if you have solved it, this message serves no rewarding purpose except to confirm your capability at cracking it. Once again, congratulations!
