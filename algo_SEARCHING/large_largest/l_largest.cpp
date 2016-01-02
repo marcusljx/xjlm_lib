@@ -2,27 +2,24 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <climits>
+#include <map>
 
 using namespace std;
-
 
 int main(int argc, char const *argv[])
 {
 	int topSize = atoi(argv[1]);
-	int top[topSize];	cerr << "topSize = " << topSize << endl;
-	vector<int> idx;
+	vector<int> top;	cerr << "topSize = " << topSize << endl;
+
+	cout << "INT_MAX = " << INT_MAX << endl;
 
 	int input; int i=0;
 	while(cin >> input) {
 		// cout << input << endl;
 		// filter here
-		if( (i==0) || ( (idx.size() !=0)&&(input > top[idx[0]]) ) ) {
-			top[i] = input;		// append number to top array;
-			idx.push_front(i);	// append position of number to front of idx;
-			i++;
-			if(i>topSize) {
-				break;
-			}
+		if(top.size() == 0) {
+			top.push_back(input);
 		}
 	}
 	cout << "Exiting." << endl;
