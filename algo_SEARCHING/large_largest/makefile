@@ -1,10 +1,10 @@
 all: run
 
-num=10
+num=5
 inputfile=testfile.txt
-testEntries=100
+testEntries=20
 
-run: l_largest.bin
+run: newTestFile l_largest.bin
 	./l_largest.bin $(num) < $(inputfile)
 
 newTestFile: generateTestFile.bin
