@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
 {
 	int input;
 	while(cin >> input) {
-		cout << "You entered \" " << input << "\"" << endl;
+		cout << input << endl;
 
 	}
 	cout << "Exiting." << endl;
