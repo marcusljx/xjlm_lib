@@ -2,26 +2,16 @@
 #include <vector>
 #include <iostream>
 #include <climits>
-#include <queue>
+#include <set>
 
 using namespace std;
 
 int topSize;
 
-class comparator {
-public:
-	bool operator()(int& lhs, int& rhs) {
-		return (lhs > rhs);
-	}
-};
-
-
-void print(priority_queue<int, vector<int>, comparator> input) {
-	int temp;
-	while(!input.empty()) {
-		temp = input.top();
-		cout << temp << endl;
-		input.pop();
+void printSet(set<int> S) {
+	set<int>::iterator i;
+	for(i=S.begin(); i!=S.end(); i++) {
+		cout << *i << endl;
 	}
 }
 
@@ -31,15 +21,15 @@ int main(int argc, char const *argv[])
 	// cout << "INT_MAX = " << INT_MAX << endl;
 
 	int input;
-	priority_queue<int, vector<int>, comparator> top;
+	set<int> top;
 	while(cin >> input) {
-		top.push(input);
+		top.insert(input);
 		if(top.size() > topSize) {
-			top.pop();
+			top.erase(top.begin());
 		}
 	}
 	cout << "TOP " << topSize << " UNIQUE ELEMENTS:" << endl;
-	print(top);
+	printSet(top);
 
 	return 0;
 }
