@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 	int numOfEntries = atoi(argv[1]);
 
 	for(int i=0; i<numOfEntries; i++) {
-		cout << rand() % 5 << endl;
+		cout << rand() % INT_MAX << endl;
 	}
 
 	return 0;

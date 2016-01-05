@@ -1,13 +1,13 @@
 all: run
 
-num=5
+num=1000
 inputfile=testfile.txt
-testEntries=20
+testEntries=1000000
 
-run: newTestFile l_largest.bin
+run: $(inputfile) l_largest.bin
 	./l_largest.bin $(num) < $(inputfile)
 
-newTestFile: generateTestFile.bin
+$(inputfile): generateTestFile.bin
 	./generateTestFile.bin $(testEntries) > $(inputfile)
 
 generateTestFile.bin: generateTestFile.cpp
@@ -15,3 +15,6 @@ generateTestFile.bin: generateTestFile.cpp
 
 l_largest.bin: l_largest.cpp
 	g++ l_largest.cpp -o l_largest.bin
+
+clean:
+	rm *.bin $(inputfile)
