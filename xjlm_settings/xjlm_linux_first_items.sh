@@ -2,7 +2,7 @@
 
 # PPA additions
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
-
+sudo add-apt-repository ppa:webupd8team/java
 
 
 
@@ -11,7 +11,7 @@ sudo apt-get update
 
 
 # Package Installations
-sudo apt-get install git g++ sublime-text-installer xorg-dev build-essential chromium-browser
+sudo apt-get install g++ sublime-text-installer xorg-dev build-essential oracle-java8-installer -y
 
 
 # Gnome Keyring set-up on non-GNOME environments
