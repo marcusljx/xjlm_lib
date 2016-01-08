@@ -45,19 +45,19 @@ bool importanceComparator(Worker* A, Worker* B) {
 
 void phase1() {
 	sort(g_workerPool.begin(), g_workerPool.end(), importanceComparator);
-	debug_printWorkerPool();
+	// debug_printWorkerPool();
 
 	while( (g_workerPool.size() > max_Workers) || (g_workerPool.back()->get_Importance(g_workerPool, g_limits) > 0)) {
 		g_workerPool.pop_back();
-		cout << "================================================" << endl;
+		// cerr << "================================================" << endl;
 		sort(g_workerPool.begin(), g_workerPool.end(), importanceComparator);
-		debug_printWorkerPool();
+		// debug_printWorkerPool();
 	}
 }
 
 //================== PHASE 2 ===============
 void phase2() {
-	cout << "================================================" << endl;
+	cout << "Week Schedule\n================================================" << endl;
 
 	srand(time(NULL));
 	vector< vector<Worker*> > schedule;
@@ -87,9 +87,10 @@ void phase2() {
 			cout << d_worker->getName() << ", ";
 		} cout << endl;
 	}
-
-	cout << "================================================" << endl;
+	cout << endl;
+	
 	// print individual worker timetables
+	cout << "Workers Schedule\n================================================" << endl;
 	for(auto d_worker : g_workerPool) {
 		cout << d_worker->getName() << "\t\t";
 		for(int d=0; d<7; d++) {
@@ -113,8 +114,8 @@ int main(int argc, char const *argv[]) {
 	min_Workers = (weekend > weekday) ? weekend : weekday;
 
 	readInput(argv[1]);
-	debug_printWorkerPool();
-	cout << "================================================" << endl;
+	// debug_printWorkerPool();
+	// cerr << "================================================" << endl;
 	phase1();
 	phase2();
 

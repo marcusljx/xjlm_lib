@@ -1,9 +1,10 @@
-all:run
-
 inputfile=sampleData.txt
 weekdaySlots=3
 weekendSlots=3
 totalWorkers=5
+
+## DO NOT MODIFY ANYTHING BELOW THIS LINE ------------
+all:run
 
 flags=-std=c++0x
 OBJ=Worker.o
