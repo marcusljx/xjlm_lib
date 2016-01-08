@@ -2,7 +2,7 @@ Name		Off Days
 ========================
 Alpha		Sunday, Tuesday
 Bravo		Monday, Saturday
-Charlie		Tuesday, Friday
+Charlie		Monday, Friday
 Delta		Wednesday, Monday
 Echo		Monday, Tuesday
-Foxtrot		Thursday, Friday
+Foxtrot		Monday, Friday

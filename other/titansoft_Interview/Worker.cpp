@@ -27,8 +27,8 @@ void Worker::setName(string inputName) {
 	p_name = inputName;
 }
 
-void Worker::setAvailability(vector<bool> inputAvailability) {
-	p_availability = inputAvailability;
+void Worker::setAvailability(int day, bool value) {
+	p_availability[day] = value;
 }
 
 void Worker::setDutyDay(int day, bool value) {
@@ -44,6 +44,10 @@ vector<bool> Worker::getAvailability() {
 	return p_availability;
 }
 
+bool Worker::getAvailability(int day) {
+	return p_availability[day];
+}
+
 bool Worker::getDutyDay(int day) {
 	return p_dutyDays[day];
 }
@@ -53,7 +57,7 @@ int Worker::calc_score(vector<Worker*> inputPool, int limits[7]) {
 	int total = 0;
 	for(int i=0; i<7; i++) {
 		for(auto W : inputPool) {
-			if(W->p_availability[i] == true) {
+			if(W->getAvailability(i) == true) {
 				scores[i]++;	// sum of each day's manpower
 			}
 		}

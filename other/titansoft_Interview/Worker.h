@@ -21,11 +21,12 @@ public:
 	~Worker();
 
 	void setName(string inputName);
-	void setAvailability(vector<bool> inputAvailability);
+	void setAvailability(int day, bool value);
 	void setDutyDay(int day, bool value);
 
 	string getName();
 	vector<bool> getAvailability();
+	bool getAvailability(int day);
 	bool getDutyDay(int day);
 
 	int calc_score(vector<Worker*> inputPool, int limits[7]);

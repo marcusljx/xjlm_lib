@@ -43,10 +43,33 @@ bool importanceComparator(Worker* A, Worker* B) {
 	return (impt_A < impt_B);
 }
 
-void phase1() {
+void preprocess() {		// chooses people to take slots where nobody is available
+	int manpower[7] = {0};
+	int total = 0;
+	for(int i=0; i<7; i++) {
+		for(auto W : g_workerPool) {
+			if(W->getAvailability(i) == true) {
+				manpower[i]++;	// sum of each day's manpower
+			}
+		}
+		manpower[i] -= g_limits[i];	// distance of each day's manpower from limit
+
+		while(manpower[i] < 0) {	// ensures that the minimum number of workers are rostered
+			Worker* chosenOne;
+			do {
+				chosenOne = g_workerPool[rand() % g_workerPool.size()];
+			} while(chosenOne->getAvailability(i) == true);
+			chosenOne->setAvailability(i, true);
+			manpower[i]++;
+		}
+	}
+}
+
+void phase1() {		// trims worker pool
 	sort(g_workerPool.begin(), g_workerPool.end(), importanceComparator);
 	// debug_printWorkerPool();
 
+	// trim "most un-needed" worker based on availability
 	while( (g_workerPool.size() > max_Workers) || (g_workerPool.back()->get_Importance(g_workerPool, g_limits) > 0)) {
 		g_workerPool.pop_back();
 		// cerr << "================================================" << endl;
@@ -56,10 +79,9 @@ void phase1() {
 }
 
 //================== PHASE 2 ===============
-void phase2() {
+void phase2() {		// assigns workers on days that have more than needed
 	cout << "Week Schedule\n================================================" << endl;
 
-	srand(time(NULL));
 	vector< vector<Worker*> > schedule;
 	for(int i=0; i<7; i++) {	// decrease limit and fill days
 		vector<Worker*> day;
@@ -103,6 +125,7 @@ void phase2() {
 
 //================== MAIN =============
 int main(int argc, char const *argv[]) {
+	srand(time(NULL));
 	weekday = stoi(argv[2]);
 	weekend = stoi(argv[3]);
 
@@ -116,6 +139,7 @@ int main(int argc, char const *argv[]) {
 	readInput(argv[1]);
 	// debug_printWorkerPool();
 	// cerr << "================================================" << endl;
+	preprocess();
 	phase1();
 	phase2();
 

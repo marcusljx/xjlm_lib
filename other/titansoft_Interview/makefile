@@ -1,7 +1,7 @@
 inputfile=sampleData.txt
-weekdaySlots=3
+weekdaySlots=2
 weekendSlots=3
-totalWorkers=5
+totalWorkers=4
 
 ## DO NOT MODIFY ANYTHING BELOW THIS LINE ------------
 all:run
