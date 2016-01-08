@@ -4,4 +4,5 @@ Alpha		Sunday, Tuesday
 Bravo		Monday, Saturday
 Charlie		Tuesday, Friday
 Delta		Wednesday, Monday
-Echo		Monday, Tuesday, Wednesday, Sunday
+Echo		Monday, Tuesday
+Foxtrot		Thursday, Friday

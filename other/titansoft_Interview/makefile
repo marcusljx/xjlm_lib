@@ -1,22 +1,24 @@
 all:run
 
 inputfile=sampleData.txt
-weekdaySlots=2
+weekdaySlots=3
 weekendSlots=3
+totalWorkers=5
 
 flags=-std=c++0x
+OBJ=Worker.o
 
 debug: prog.bin
 	cgdb prog.bin
 
 run: prog.bin
-	./prog.bin $(inputfile) $(weekdaySlots) $(weekendSlots)
+	./prog.bin $(inputfile) $(weekdaySlots) $(weekendSlots) $(totalWorkers)
 
-prog.bin: main.cpp tts_scheduler.o
-	g++ main.cpp tts_scheduler.o -o prog.bin $(flags)
+prog.bin: main.cpp $(OBJ)
+	g++ main.cpp $(OBJ) -o prog.bin $(flags)
 
-tts_scheduler.o: tts_scheduler.h tts_scheduler.cpp
-	g++ -c tts_scheduler.cpp $(flags)
+%.o: %.cpp %.h 
+	g++ -c $< $(flags)
 
-clean: *.bin *.o
+clean:
 	rm *.bin *.o
