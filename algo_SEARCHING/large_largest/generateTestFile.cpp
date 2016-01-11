@@ -1,16 +1,16 @@
 #include <cstdlib>
 #include <iostream>
-#include <climits>
+#include <string>
 
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
 	srand(time(NULL));
-	int numOfEntries = atoi(argv[1]);
+	int numOfEntries = stoi(argv[1]);
 
 	for(int i=0; i<numOfEntries; i++) {
-		cout << rand() % INT_MAX << endl;
+		cout << rand() << endl;
 	}
 
 	return 0;
