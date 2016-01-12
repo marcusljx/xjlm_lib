@@ -6,7 +6,7 @@ testEntries=1000000
 flags=-std=c++11
 
 run: $(inputfile) l_largest.bin
-	./l_largest.bin $(num) < $(inputfile)
+	./l_largest.bin $(num) $(inputfile)
 
 $(inputfile): generateTestFile.bin
 	./generateTestFile.bin $(testEntries) > $(inputfile)

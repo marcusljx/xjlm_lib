@@ -1,9 +1,10 @@
 #include <cstdlib>
 #include <vector>
 #include <iostream>
-#include <climits>
 #include <string>
 #include <queue>
+#include <fstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -21,8 +22,10 @@ void print(priority_queue<int, vector<int>, greater<int>> input) {
 int main(int argc, char const *argv[])
 {
 	topSize = stoi(argv[1]);
-	// cout << "INT_MAX = " << INT_MAX << endl;
+	string inputFile = argv[2];
 
+// original code
+/*
 	int input;
 	priority_queue<int, vector<int>, greater<int>> top;
 	while(cin >> input) {
@@ -33,6 +36,21 @@ int main(int argc, char const *argv[])
 	}
 	cout << "TOP " << topSize << " UNIQUE ELEMENTS:" << endl;
 	print(top);
+*/
+
+
+// method recommended by Alan
+	streampos size;
+	int* memblock;
+
+	ifstream file(inputFile);
+	if(file.is_open()) {
+		size = file.tellg();
+		cout << "Number of values = " << size / sizeof(int) << endl;
+		// memblock = new int[size / sizeof(int)];
+	}
+
+
 
 	return 0;
 }
