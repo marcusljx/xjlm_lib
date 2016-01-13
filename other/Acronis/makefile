@@ -1,10 +1,18 @@
-all:run
+all:testListPrimes
 
-inputNumber=1
+inputNumber=32
 flags=-std=c++11
+
+
 
 run: prog.bin
 	./prog.bin $(inputNumber)
+
+testListPrimes: listPrimesBin.cpp
+	g++ -o listPrimesBin listPrimesBin.cpp
+	./listPrimesBin $(inputNumber)
+
+
 
 prog.bin: main.cpp
 	g++ main.cpp -o prog.bin $(flags)

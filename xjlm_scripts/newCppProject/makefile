@@ -1,9 +1,13 @@
 all:test
 
 input=testProj
+flags=-std=c++11
 
 test: newCppProject
 	./newCppProject $(input)
 
-newCppProject: newCppProject
-	g++ newCppProject -o newCppProject.cpp
+newCppProject: main.cpp
+	g++ main.cpp -o newCppProject $(flags)
+
+clean:
+	rm -rf $(input) *.bin newCppProject
